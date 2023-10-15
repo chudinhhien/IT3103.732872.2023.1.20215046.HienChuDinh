@@ -72,14 +72,17 @@ public class DisplayDays {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		String month,year;
+		//input month
 		do {
 			System.out.print("Chu Dinh Hien-20215046-Please enter month:");
 			month = keyboard.nextLine();
 		}while(!checkMonth(month));
+		//input year
 		do {
 			System.out.print("Chu Dinh Hien-20215046-Please enter year:");
 			year = keyboard.nextLine();
 		}while(!checkYear(year));
+		
 		System.out.println("Number Days of Month "+month+" in Year "+year+": "+numberDays(month, year));
 		System.exit(0);
 	}
