@@ -23,10 +23,10 @@ public class CalculateDouble {
         double quotient = num1/num2;
 
         //Show Kết quả ra màn hình 
-        JOptionPane.showMessageDialog(null,"Sum:"+sum+"\n"+
-                                                            "Diffrence:"+difference+"\n"+
-                                                            "Product:"+product+"\n"+
-                                                            "Quotient:"+quotient+"\n",
+        JOptionPane.showMessageDialog(null,"Sum: "+sum+"\n"+
+                                                            "Diffrence: "+difference+"\n"+
+                                                            "Product: "+product+"\n"+
+                                                            "Quotient: "+quotient+"\n",
         "Chu Dinh Hien - 20215046 Show:",JOptionPane.INFORMATION_MESSAGE);
     }
 }

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class DisplayDays {
 	public static boolean checkMonth(String s) {
+		//Dùng switch để lựa chọn tháng chỉ trong các giá trị bên dưới
 		switch(s) {
 			case "1","2","3","4","5","6","7","8","9","10","11","12":
 				return true;
@@ -21,16 +22,18 @@ public class DisplayDays {
 	
 	public static boolean checkYear(String s) {
 		for(int i=0;i<s.length();i++) {
+			//Kiểm tra xem xâu năm mà không phải chữ số return false
 			if(!Character.isDigit(s.charAt(i))) {
 				return false;
 			}
 		}
-		return s.length()==4;
+		return s.length()==4;//Nếu năm mà không đủ bốn số return false
 	}
 	
-	public static boolean checkLeapYear(String s) {
-		int y = Integer.parseInt(s);
-		if(y%4==0&&y%100!=0) {
+	public static boolean checkLeapYear(String s) {//Kiểm tra năm nhuận
+		int y = Integer.parseInt(s);//Chuyển sang số nguyên
+		if(y%4==0&&y%100!=0) {//Những năm chia hết cho 4 và không chia hết cho 100
+							  //là năm nhuận
 			return true;
 		}
 		
@@ -38,12 +41,13 @@ public class DisplayDays {
 	}
 	
 	public static int numberDays(String month,String year) {
+		//Dùng switch case để in trả về sô ngày của tháng đó
 		switch(month) {
 			case "1","Jan.","Jan","January":
 				return 31;
 			case "February","Feb.","Feb","2":
-				if(checkLeapYear(year)) return 29;
-				else return 28;
+				if(checkLeapYear(year)) return 29;//Nếu năm nhuận thì return 29 ngày
+				else return 28;					  //Ngược lại là 28 ngày
 			case "March","Mar.","Mar","3":
 				return 31;
 			case "4","Apr.","Apr","April":

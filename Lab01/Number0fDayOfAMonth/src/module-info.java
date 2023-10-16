@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module Number0fDayOfAMonth {
-}
