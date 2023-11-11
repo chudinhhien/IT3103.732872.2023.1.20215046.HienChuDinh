@@ -21,6 +21,42 @@ public class Cart {
 		}
 	}
 	
+	//Thêm phương thức addDigitalVideoDisc với tham số là mảng DVD
+		public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+			//Kiểm tra xem số lượng DVD trong dvdList thêm vào giỏ hàng hiện tại có vượt quá
+			//số lượng giỏ hàng tối đa cho phép.
+			if(qtyOrdered+dvdList.length<MAX_NUMBERS_ORDERED) {
+				//Duyệt qua các phần tử cho mảng để thêm vào giỏ hàng
+				for(DigitalVideoDisc disc: dvdList) {
+					itemsOrdered[qtyOrdered] = disc;
+					qtyOrdered++;
+				}
+				//In ra thông báo thêm vào giỏ hàng thành công
+				System.out.println("CHU DINH HIEN-20215046 da them thanh cong danh sach DVD vao gio hang!");
+			}else {
+				//In ra thông báo quá số lượng tối đa cho phép của giỏ hàng
+				System.out.println("CHU DINH HIEN-20215046 da them vuot qua so luong toi da gio hang cho phep!");
+			}
+		}
+		
+		//Thêm phương thức addDigitalVideoDisc với 2 tham số là dvd1, dvd2
+		public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+			//Kiểm tra xem khi thêm 2 dvd có vượt quá số lượng cho phép không
+			if(qtyOrdered+2<MAX_NUMBERS_ORDERED) {
+				//Thêm 2 dvd vào giỏ hàng
+				itemsOrdered[qtyOrdered] = dvd1;
+				qtyOrdered++;
+				itemsOrdered[qtyOrdered] = dvd2;
+				qtyOrdered++;
+				//In ra thông báo thêm thành công vào giỏ hàng
+				System.out.println("CHU DINH HIEN-20215046 da them thanh cong 2 DVD !");
+			}else {
+				//In ra thông báo quá số lượng tối đa của giỏ hàng
+				System.out.println("CHU DINH HIEN-20215046 da them 2 DVD vuot qua so luong cho phep cua gio hang!");
+				
+			}
+		}
+	
 	public int getQtyOrdered() {
 		return qtyOrdered;
 	}
