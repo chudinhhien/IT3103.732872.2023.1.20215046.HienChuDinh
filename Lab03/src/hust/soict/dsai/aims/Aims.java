@@ -1,3 +1,8 @@
+package hust.soict.dsai.aims;
+
+import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
 //CHU ĐÌNH HIỂN - 20215046
 public class Aims {
 	public static void main(String[] args) {

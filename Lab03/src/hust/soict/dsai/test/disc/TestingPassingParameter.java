@@ -1,3 +1,7 @@
+package hust.soict.dsai.test.disc;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
 //CHU DINH HIEN - 20215046
 public class TestingPassingParameter {
 	

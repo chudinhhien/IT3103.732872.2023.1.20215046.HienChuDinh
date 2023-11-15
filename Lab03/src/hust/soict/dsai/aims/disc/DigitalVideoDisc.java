@@ -1,3 +1,5 @@
+package hust.soict.dsai.aims.disc;
+
 //CHU ĐÌNH HIỂN - 20215046
 public class DigitalVideoDisc {
 	//khai báo thuộc tính của lớp Digital Video Disc

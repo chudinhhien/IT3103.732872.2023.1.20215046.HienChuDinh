@@ -1,6 +1,10 @@
+package hust.soict.dsai.aims.cart;
+
 //CHU ĐÌNH HIỂN - 20215046
 
 import java.util.Arrays;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 public class Cart {
 	//Các thuộc tính của Cart
