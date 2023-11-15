@@ -101,11 +101,45 @@ public class Cart {
 		return totalCurent;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Cart [itemsOrdered=" + Arrays.toString(itemsOrdered) + ", qtyOrdered=" + qtyOrdered + "]";
-//	}
-//	
+	//CHU DINH HIEN - 20215046
+	//Phương thức print cho Cart theo đúng định dạng của đề bài
+	public void print() {
+		//In tiêu đề
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items:");
+		//Vòng for lấy các item trong giỏ hàng
+		for(int i = 0 ; i< qtyOrdered ;i++) {
+			//In ra item bằng toString()
+			System.out.println(itemsOrdered[i]);
+		}
+		//In ra tổng giá tiền của giỏ hàng
+		System.out.println("Total cost: [" + totalCost() + "]" );
+	}
 	
+	//Tìm kiếm theo ID
+	public void searchByID(int id) {
+		for(int i = 0 ; i< qtyOrdered ;i++) {
+			if(itemsOrdered[i].getId() == id) {//Nếu tìm thấy ID thì in ra và return vì chỉ có 1 ID duy nhất
+				System.out.println(itemsOrdered[i]);
+				return;
+			}
+		}
+		//In ra thông báo không tìm thấy
+		System.out.println("Khong tim thay ID trong gio hang cua CHU DINH HIEN - 20215046");
+	}
 	
+	//Tìm kiếm theo title
+	public void searchByTitle(String title) {
+		int check = 0;
+		for(int i = 0 ; i< qtyOrdered ;i++) {
+			//Nếu tìm thấy title in ra
+			if(itemsOrdered[i].isMatch(title)) {
+				System.out.println(itemsOrdered[i]);
+				//Đánh dấu tìm thấy
+				check = 1;
+			}
+		}
+		//Nếu chưa được đánh dấu tìm thấy in ra thông báo
+		if(check == 0) System.out.println("Khong tim thay tieu de trong gio hang cua CHU DINH HIEN - 20215046");
+	}
 }

@@ -79,12 +79,23 @@ public class DigitalVideoDisc {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
+	//Chu Dinh Hien - 20215046
+	//toString() theo đúng cấu trúc đề bài
+	@Override
+	public String toString() {
+		return id + ". DVD - [" + title + "] - [" + category + "] - ["+ director + "] - [" + length + "]: [" + cost + "] $";
+	}
+	
+	//Chu Dinh Hien - 20215046
+	//Phương thức isMatch để kiểm tra xem có trùng với title đang tìm không
+	public boolean isMatch(String title) {
+		return this.title == title;
+	}
 
-//	@Override
-//	public String toString() {
-//		return "DigitalVideoDisc [id=" + id + ", title=" + title + ", category=" + category + ", director=" + director
-//				+ ", length=" + length + ", cost=" + cost + "]";
-//	}
-	
-	
+	//Getter lấy ID
+	public int getId() {
+		return id;
+	}
+
 }
