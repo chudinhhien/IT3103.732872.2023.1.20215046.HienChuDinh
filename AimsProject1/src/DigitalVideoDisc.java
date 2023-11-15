@@ -62,4 +62,10 @@ public class DigitalVideoDisc {
 		this.length = length;
 		this.cost = cost;
 	}
+	
+	//Setter Title
+	//CHU DINH HIEN - 20215046
+	public void setTitle(String title) {
+		this.title = title;
+	}
 }
