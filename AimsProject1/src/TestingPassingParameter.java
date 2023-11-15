@@ -14,18 +14,15 @@ public class TestingPassingParameter {
 		System.out.println("CHU DINH HIEN -2021 test jungle dvd title: " + jungleDVD.getTitle());
 		System.out.println("CHU DINH HIEN -2021 test cinderella dvd title: " + cinderellaDVD.getTitle());
 		
-//		changeTitle(jungleDVD, cinderellaDVD.getTitle());
-//		System.out.println("jungle dvd title: " + jungleDVD.getTitle());
+		changeTitle(jungleDVD, cinderellaDVD.getTitle());
+		System.out.println("jungle dvd title: " + jungleDVD.getTitle());
 	}
 	
-	//Viết lại hàm swap
-	public static void swap(DigitalVideoDisc o1, DigitalVideoDisc o2) {
-		//Lưu giá trị title của o1
-		String tmp = o1.getTitle();
-		//Set title của o1 là title của o2
-		o1.setTitle(o2.getTitle());
-		//Set title của o2 là biến tmp(hay là title của o1)
-		o2.setTitle(tmp);
+	//Hàm swap ban đầu
+	public static void swap(Object o1, Object o2) {
+		Object tmp = o1;
+		o1 = o2;
+		o2 = tmp;
 	}
 	
 	//Hàm changeTitle của đề bài

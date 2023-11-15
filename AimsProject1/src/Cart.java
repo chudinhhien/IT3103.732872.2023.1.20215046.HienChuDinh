@@ -1,4 +1,7 @@
 //CHU ĐÌNH HIỂN - 20215046
+
+import java.util.Arrays;
+
 public class Cart {
 	//Các thuộc tính của Cart
 	public static final int MAX_NUMBERS_ORDERED = 20; // Số lượng tối đa DVD của giỏ hàng
@@ -97,5 +100,12 @@ public class Cart {
 		//Trả về tổng giá
 		return totalCurent;
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Cart [itemsOrdered=" + Arrays.toString(itemsOrdered) + ", qtyOrdered=" + qtyOrdered + "]";
+//	}
+//	
+	
 	
 }

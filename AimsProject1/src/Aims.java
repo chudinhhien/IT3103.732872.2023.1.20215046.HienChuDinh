@@ -22,5 +22,8 @@ public class Aims {
 //		anOrder.addDigitalVideoDisc(listDVD);
 		//Phương thức thêm 2 DVD
 		anOrder.addDigitalVideoDisc(dvd4,dvd5);
+		System.out.println(dvd1);
+		System.out.println(dvd2);
+		System.out.println(dvd3);
 	}
 }
