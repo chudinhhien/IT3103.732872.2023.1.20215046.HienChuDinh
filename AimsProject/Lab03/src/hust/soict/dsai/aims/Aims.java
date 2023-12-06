@@ -1,7 +1,7 @@
 package hust.soict.dsai.aims;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 //CHU ĐÌNH HIỂN - 20215046
 public class Aims {
@@ -13,12 +13,12 @@ public class Aims {
 		anOrder.addDigitalVideoDisc(dvd1);
 		DigitalVideoDisc dvd2 = new DigitalVideoDisc ("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
 		anOrder.addDigitalVideoDisc (dvd2);
-		DigitalVideoDisc dvd3 = new DigitalVideoDisc ("Aladin", "Animation", 18.99f);
+		DigitalVideoDisc dvd3 = new DigitalVideoDisc ("Aladin", "Animation", null, 0, 18.99f);
 		anOrder.addDigitalVideoDisc (dvd3);
 		//Tạo list DVD thêm vào giỏ hàng
-		DigitalVideoDisc dvd4 = new DigitalVideoDisc ("Test1", "Test Title 01", 10.99f);
-		DigitalVideoDisc dvd5 = new DigitalVideoDisc ("Test2", "Test Title 02", 9.99f);
-		DigitalVideoDisc dvd6 = new DigitalVideoDisc ("Test3", "Test Title 03", 18.99f);
+		DigitalVideoDisc dvd4 = new DigitalVideoDisc ("Test1", "Test Title 01", null, 0, 10.99f);
+		DigitalVideoDisc dvd5 = new DigitalVideoDisc ("Test2", "Test Title 02", null, 0, 9.99f);
+		DigitalVideoDisc dvd6 = new DigitalVideoDisc ("Test3", "Test Title 03", null, 0, 18.99f);
 		DigitalVideoDisc[] listDVD = new DigitalVideoDisc[3];
 		listDVD[0] = dvd4;
 		listDVD[1] = dvd5;

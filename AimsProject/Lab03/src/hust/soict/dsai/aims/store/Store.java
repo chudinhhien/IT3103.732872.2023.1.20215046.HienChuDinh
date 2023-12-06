@@ -1,36 +1,35 @@
 package hust.soict.dsai.aims.store;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import java.util.ArrayList;
+import hust.soict.dsai.aims.media.Media;
 
 //Chu Dinh Hien - 20215046
 public class Store {
   public static final int MAX_NUMBERS_IN_STORE = 999;
-  private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[MAX_NUMBERS_IN_STORE];
-  private int qtyInStore = 0; //Số lượng DVD trong kho  
+  private ArrayList<Media> itemsInStore = new ArrayList<Media>(); 
 
-  public void addDVD(DigitalVideoDisc disc) {
-      if (qtyInStore < MAX_NUMBERS_IN_STORE) { // Kiểm tra số lượng đủ hay không
-          itemsInStore[qtyInStore] = disc;
-          qtyInStore++;
-          System.out.println("Chu Dinh Hien - 20215046: Them thanh cong!");
+  public void addMedia(Media media) {
+      if (itemsInStore.size() <= MAX_NUMBERS_IN_STORE) { // Kiểm tra số lượng đủ hay không
+    	  //Thêm media vào Store
+    	  itemsInStore.add(media);
+    	  //In ra thông báo
+          System.out.println("Chu Dinh Hien - 20215046: Thêm thành công!");
       } else { //Nếu đã đầy
-          System.out.println("Chu Dinh Hien - 20215046: Store da day khong them duoc!");
+    	  //In ra thông báo
+          System.out.println("Chu Dinh Hien - 20215046: Store đã đầy!");
       }
   }
 
-  public void removeDVD(DigitalVideoDisc disc) {
-      for (int i = 0; i < qtyInStore; i++) {
-          if (itemsInStore[i].equals(disc)) {
-              //Gắn lại item từ vị trí bị xóa
-              for (int j = i; j < qtyInStore - 1; j++) {
-                  itemsInStore[j] = itemsInStore[j + 1];
-              }
-              qtyInStore--;
-              System.out.println("Chu Dinh Hien - 20215046: Da xoa thanh cong!");
-              return;
-          }
-      }
-      System.out.println("Chu Dinh Hien - 20215046: DVD khong ton tai!");
+  public void removeMedia(Media media) {
+	  //Kiểm tra media có trong Store hay không
+	  if(itemsInStore.contains(media)) {//Nếu có
+		  //Xóa media
+		  itemsInStore.remove(media);
+		  //Thông báo
+		  System.out.println("Chu Đình Hiển - 20215046: Đã xóa thành công!");
+	  }else {//Nếu không
+		  //Thông báo
+		  System.out.println("Chu Đình Hiển - 20215046:" + media.getTitle() + " không tồn tại trong Store");
+	  }
   }
-
 }

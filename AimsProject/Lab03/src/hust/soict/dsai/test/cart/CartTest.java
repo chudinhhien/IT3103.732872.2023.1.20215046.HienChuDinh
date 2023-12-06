@@ -1,7 +1,7 @@
 package hust.soict.dsai.test.cart;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 //CHU DINH HIEN - 20215046
 public class CartTest {
@@ -13,8 +13,8 @@ public class CartTest {
 		cart.addDigitalVideoDisc (dvd1);
 		DigitalVideoDisc dvd2 = new DigitalVideoDisc ("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
 		cart.addDigitalVideoDisc(dvd2);
-		DigitalVideoDisc dvd3 = new DigitalVideoDisc ("Aladin", "Animation", 18.99f);
-		cart.addDigitalVideoDisc(dvd3);
+//		DigitalVideoDisc dvd3 = new DigitalVideoDisc ("Aladin", "Animation", 18.99f);
+//		cart.addDigitalVideoDisc(dvd3);
 		//Test the print method cart.print();
 		cart.print();
 		//To-do: Test the search methods here

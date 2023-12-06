@@ -1,15 +1,15 @@
 package hust.soict.dsai.test.disc;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 //CHU DINH HIEN - 20215046
 public class TestingPassingParameter {
 	
 	public static void main(String[] args) {
 		//Khai báo jungleDVD tham chiếu đến object có title là Jungle
-		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
+		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle", null, null, 0, 0);
 		//Khai báo cinderellaDVD tham chiếu đến object có title là Cinderella
-		DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
+		DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella", null, null, 0, 0);
 
 		//Gọi lại hàm swap
 		swap(jungleDVD, cinderellaDVD);
@@ -34,6 +34,6 @@ public class TestingPassingParameter {
 		String oldTitle = dvd.getTitle();//Lưu title của dvd
 		dvd.setTitle(title);//set lại title của dvd bằng biến title truyền vào hàm
 		//Gắn lại dvd vào tham chiếu mới với title là oldTitle
-		dvd = new DigitalVideoDisc(oldTitle);
+		dvd = new DigitalVideoDisc(oldTitle, oldTitle, oldTitle, 0, 0);
 	}
 }
