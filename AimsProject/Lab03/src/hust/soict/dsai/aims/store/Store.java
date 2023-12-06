@@ -32,4 +32,13 @@ public class Store {
 		  System.out.println("Chu Đình Hiển - 20215046:" + media.getTitle() + " không tồn tại trong Store");
 	  }
   }
+  
+  public Media findMediaByTitle(String title) {
+      for (Media media : itemsInStore) {
+          if (media.getTitle().equalsIgnoreCase(title)) {
+              return media;
+          }
+      }
+      return null; // Media not found with the specified title
+  }
 }
