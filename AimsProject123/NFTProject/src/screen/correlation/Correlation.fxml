@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="1024.0" prefWidth="1154.0" style="-fx-background-color: #F6FAFD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screen.correlation.CorrelationController">
+   <top>
+      <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="1054.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="34.0" right="66.0" top="44.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox>
+               <children>
+                  <Label lineSpacing="42.0" prefHeight="44.0" prefWidth="303.0" style="-fx-font-weight: 700;" text="Tương Quan">
+                     <font>
+                        <Font name="Arial" size="42.0" />
+                     </font>
+                  </Label>
+                  <Label style="-fx-font-weight: 400;" textFill="#718096">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label style="-fx-font-weight: 400;" textFill="#718096">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="323.0">
+               <HBox.margin>
+                  <Insets left="492.0" top="11.0" />
+               </HBox.margin>
+               <children>
+                  <Label lineSpacing="24.0" prefHeight="20.0" prefWidth="175.0" text="Chọn ngày/tháng/năm" textFill="#718096">
+                     <HBox.margin>
+                        <Insets top="4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="151.0" style="-fx-background-radius: 4; -fx-background-color: #1DA1F2; -fx-background-insets: 0;">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </DatePicker>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <BorderPane layoutX="-8.0" layoutY="-27.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="743.0" prefWidth="936.0" style="-fx-background-color: #FFFFFF;" translateX="-40.0">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <center>
+            <LineChart fx:id="chartLine" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="817.0" BorderPane.alignment="CENTER">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </center>
+         <left>
+            <Label text="Volume" translateX="20.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Segoe UI Semibold" size="18.0" />
+               </font>
+            </Label>
+         </left>
+         <bottom>
+            <Label text="Day" translateX="40.0" translateY="-40.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Segoe UI Semibold" size="18.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </Label>
+         </bottom>
+      </BorderPane>
+   </center>
+</BorderPane>

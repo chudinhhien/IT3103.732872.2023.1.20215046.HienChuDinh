@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import screen.correlation.CorrelationController;
 import screen.post.PostController;
 import screen.trending.TrendingController;
 
@@ -95,9 +96,15 @@ public class DefaultController {
     }	
 
     @FXML
-    void clickCorrelation(ActionEvent event) {
-
+    void clickCorrelation(MouseEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../correlation/Correlation.fxml"));
+        Node newContent = loader.load();
+        CorrelationController controller = new CorrelationController();
+        loader.setController(controller);
+        rootPane.setCenter(newContent);
+        changeCSSBtnNoActive(btnTrend);
+        changeCSSBtnNoActive(btnPost);
+        changeCSSBtnActive(btnCorrelation);
     }
 }
-
 

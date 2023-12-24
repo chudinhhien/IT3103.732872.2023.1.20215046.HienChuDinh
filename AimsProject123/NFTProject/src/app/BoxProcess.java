@@ -20,37 +20,82 @@ import model.Box;
 import model.NFT;
 import model.NFTData_Binance;
 import model.NFTData_Opensea;
+import model.ResultData;
 import model.Tweets;
 import data.DatabaseReader;
 import java.util.Calendar;
 
 import java.util.Map;
 import java.util.HashMap;
-
-
-
 public class BoxProcess {
 	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-       
-       
 	    //hashtagSearchingFunction("#NFT");
 	    //tagSearchingFunction("NFT");
+		 List<Date> x = new ArrayList<>();
+	     List<String> y = new ArrayList<>();
+		
 		System.out.println(findHotHashTagInTweets(18,12,2023));
 		System.out.println(findHotTagInBlog(20,7,2023));
-
 	    
-	    List<Tweets> res = hashtagSearchingFunction("#NFT");
-	    for(Tweets tweet : res) {
-	    	System.out.println(tweet.getId());
+//	    List<Tweets> res = hashtagSearchingFunction("#NFT");
+//	    for(Tweets tweet : res) {
+//	    	System.out.println(tweet.getId());
+//	    }
+//	    List<BlogPosts> res2 = tagSearchingFunction("NFT");
+//	    for(BlogPosts blog : res2) {
+//	    	System.out.println(blog.getId());
+//	    }
+	    List<Articles> tweetsByAuthor = searchByAuthorFunction("Liberta Cherguia");
+	    for (Articles tweet : tweetsByAuthor) {
+	        System.out.println(tweet.getId());
 	    }
-	    List<BlogPosts> res2 = tagSearchingFunction("NFT");
-	    for(BlogPosts blog : res2) {
-	    	System.out.println(blog.getId());
+	    
+	    searchNFTsByCollectionAndDateFunction("Homie Metaverse", Date.valueOf("2023-01-01"), x, y);
+	    List<Float> volumeAsFloat = convertVolumeListToFloat(y);
+	    for (int i = 0; i < x.size(); i++) {
+	        System.out.println("Date: " + x.get(i) + ", Volume: " + volumeAsFloat.get(i));
 	    }
-
 	}
 	
+	public static ResultData searchNFTsAndReturnData(String collection, Date searchDate) throws ClassNotFoundException, SQLException {
+        List<Date> x = new ArrayList<>();
+        List<String> y = new ArrayList<>();
+        System.out.println("kkk");
+        searchNFTsByCollectionAndDateFunction(collection, searchDate, x, y);
+        List<Float> volumeAsFloat = convertVolumeListToFloat(y);
+
+        return new ResultData(x, volumeAsFloat);
+    }
+	
+	// Phương thức chuyển đổi dữ liệu từ String sang float
+	public static List<Float> convertVolumeListToFloat(List<String> volumeList) {
+	    List<Float> result = new ArrayList<>();
+	    for (String volume : volumeList) {
+	        // Loại bỏ các ký tự không phải số và dấu chấm
+	        String cleanedVolume = volume.replaceAll("[^0-9.]", "");
+	        // Chuyển đổi thành dạng float và thêm vào danh sách kết quả
+	        float floatValue = Float.parseFloat(cleanedVolume);
+	        result.add(floatValue);
+	    }
+	    return result;
+	}
+	 
+	 public static void searchNFTsByCollectionAndDateFunction(String collection, Date searchDate, List<Date> x,
+	            List<String> y) throws ClassNotFoundException, SQLException {
+	        Box box = new Box();
+	        populateNFTData_Opensea(DatabaseReader.getConnection(), box);
+	        populateNFTData_Binance(DatabaseReader.getConnection(), box);
+	        box.searchNFTsByCollectionAndDate(collection, searchDate, x, y);
+	     
+	    }
+	
+	public static List<Articles> searchByAuthorFunction(String author) throws ClassNotFoundException, SQLException {
+	    Box box = new Box();
+	    populateTweets(DatabaseReader.getConnection(), box);
+	    return box.searchByAuthor(author);
+	}
+
 	public static List<BlogPosts> tagSearchingFunction(String tag) throws ClassNotFoundException, SQLException {
 	    Box box = new Box();
 	    populateBlogPosts(DatabaseReader.getConnection(), box);
@@ -82,7 +127,7 @@ public class BoxProcess {
 	    return res;
 	}
 	
-	
+
 	public static String findHotHashTagInTweets(int day, int month, int year) throws ClassNotFoundException, SQLException {
 	    List<String> allTags = new ArrayList<>();
 	    Box box = new Box();
@@ -119,7 +164,6 @@ public class BoxProcess {
 	    List<String> allTags = new ArrayList<>();
 	    Box box = new Box();
 	    populateBlogPosts(DatabaseReader.getConnection(), box);
-	    
 	    // Lặp qua danh sách blogposts và thu thập tất cả các tag
 	    for (Articles article : box.getBox()) {
 	        if (article instanceof BlogPosts) {
@@ -146,26 +190,19 @@ public class BoxProcess {
 
 	    return hotTag;
 	}
-
-
-	
-	
 	public static String findMostFrequentTag(List<String> tags) {
 	    if (tags == null || tags.isEmpty()) {
 	        return null; // Trả về null nếu danh sách rỗng hoặc null
 	    }
 
 	    Map<String, Integer> tagCountMap = new HashMap<>();
-
 	    // Đếm số lần xuất hiện của từng tag
 	    for (String tag : tags) {
 	        tagCountMap.put(tag, tagCountMap.getOrDefault(tag, 0) + 1);
 	    }
-
 	    // Tìm tag xuất hiện nhiều nhất
 	    String mostFrequentTag = null;
 	    int maxCount = 0;
-
 	    for (Map.Entry<String, Integer> entry : tagCountMap.entrySet()) {
 	        if (entry.getValue() > maxCount) {
 	            mostFrequentTag = entry.getKey();
@@ -175,15 +212,7 @@ public class BoxProcess {
 
 	    return mostFrequentTag;
 	}
-	
-	
-
-	
-	
-	
-	
-	
-	
+		
 	private static void populateTweets(Connection connection, Box box) throws SQLException {
         String query = "SELECT * FROM tweets";
         PreparedStatement statement = connection.prepareStatement(query);
@@ -255,7 +284,6 @@ public class BoxProcess {
             box.addMoney(nftDataOpensea);
         }
     }
-    
     private static void populateNFTData_Binance(Connection connection, Box box) throws SQLException {
     	String query = "SELECT * FROM NFTData_Binance";
         PreparedStatement statement = connection.prepareStatement(query);
