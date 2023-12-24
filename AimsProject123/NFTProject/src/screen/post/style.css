@@ -56,3 +56,73 @@
 .iconBtn {
 	-fx-fill: #ffffffff;
 }
+
+.innerSocial {
+	-fx-padding: 0 0 0 30;
+}
+
+.commentLabel {
+	-fx-padding: 0 0 0 10;
+}
+
+.blogPost {
+	-fx-pref-width: 400px;
+	-fx-pref-height: 735px;
+	-fx-background-radius: 25px;
+	-fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+    -fx-border-radius: 5; 
+}
+
+.imagePost {
+	-fx-background-color: #1DA1F2;
+	-fx-pref-width: 436px;
+	-fx-pref-height: 250px;
+}
+
+.contentPost {
+	-fx-wrap-text: true;
+	-fx-font-size: 18px;
+	-fx-text-fill: rgba(0, 0, 0, 0.50);
+}
+
+.innerContentPost {
+	-fx-padding: 20 53 10 26;
+	-fx-pref-height: 200px;
+}
+
+.innerTitlePost {
+	-fx-padding: 34 21 0 26;
+	-fx-pref-height: 150px;
+}
+
+.title {
+	-fx-font-size: 24px;
+	-fx-wrap-text: true;
+	-fx-font-weight: bolder;
+}
+
+.innerDatePost {
+	-fx-padding: 0 0 0 26;
+}
+
+.innerAuthorPost {
+	-fx-padding: 0 37.72 0 0;
+}
+
+.author {
+	-fx-font-size: 12px;
+	-fx-text-fill: #000;
+	-fx-font-weight: bolder;
+}
+
+.date {
+	-fx-font-size: 12px;
+	-fx-text-fill: #000;
+	-fx-font-weight: bolder;
+}
+
+.innerBtnPost {
+	-fx-padding: 15 0 0 26;
+}

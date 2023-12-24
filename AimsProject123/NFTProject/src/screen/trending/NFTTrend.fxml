@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="1024.0" prefWidth="1154.0" style="-fx-background-color: #F6FAFD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="1024.0" prefWidth="1154.0" style="-fx-background-color: #F6FAFD;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screen.trending.TrendingController">
    <top>
       <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="1054.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -38,162 +38,29 @@
                <HBox.margin>
                   <Insets left="492.0" top="11.0" />
                </HBox.margin>
-               <children>
-                  <Label lineSpacing="24.0" prefHeight="20.0" prefWidth="175.0" text="Chọn ngày/tháng/năm" textFill="#718096">
-                     <HBox.margin>
-                        <Insets top="4.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="151.0" style="-fx-background-radius: 4; -fx-background-color: #1DA1F2; -fx-background-insets: 0;">
-                     <HBox.margin>
-                        <Insets left="30.0" />
-                     </HBox.margin>
-                  </DatePicker>
-               </children>
             </HBox>
          </children>
       </HBox>
    </top>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #ffffffff; -fx-background-radius: 24;" BorderPane.alignment="CENTER">
+      <BorderPane layoutX="-8.0" layoutY="-27.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;">
          <BorderPane.margin>
-            <Insets bottom="53.0" left="34.0" right="62.0" top="20.0" />
+            <Insets />
          </BorderPane.margin>
-         <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #F6FAFD; -fx-background-radius: 25;">
-               <VBox.margin>
-                  <Insets left="30.0" right="30.0" top="20.0" />
-               </VBox.margin>
-               <children>
-                  <Label style="-fx-font-weight: bolder; -fx-font-size: 14;" text="Top 6 hashtag/tag hot trong ngày/tuần/tháng">
-                     <VBox.margin>
-                        <Insets left="45.0" top="20.0" />
-                     </VBox.margin>
+         <center>
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="930.0" style="-fx-background-color: #EAF5FF;" BorderPane.alignment="CENTER">
+               <center>
+                  <DatePicker fx:id="datePicker" onAction="#findHotTag" promptText="Ngày/Tháng/Năm" scaleX="2.5" scaleY="2.5" BorderPane.alignment="CENTER"  />
+               </center>
+               <bottom>
+                  <Label fx:id="output" alignment="CENTER" prefHeight="53.0" prefWidth="596.0" text="" translateY="-300.0" BorderPane.alignment="CENTER">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Segoe UI Semibold" size="36.0" />
                      </font>
                   </Label>
-                  <BarChart legendSide="TOP" minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="915.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </BarChart>
-               </children>
-            </VBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <VBox.margin>
-                  <Insets top="25.0" />
-               </VBox.margin>
-               <children>
-                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="218.0" style="-fx-background-color: #F6FAFD; -fx-border-radius: 25; -fx-background-radius: 25;">
-                     <children>
-                        <Label style="-fx-font-size: 12; -fx-font-weight: bolder;" text="Hagtag" textFill="#1c1c1c">
-                           <VBox.margin>
-                              <Insets bottom="15.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <Label style="-fx-font-size: 24; -fx-font-weight: bolder;" text="7,265" textFill="#1c1c1c" />
-                              <Label style="-fx-font-size: 12;" text="+11.02%" textFill="#1c1c1c">
-                                 <HBox.margin>
-                                    <Insets left="54.0" top="5.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="30.0" />
-                     </HBox.margin>
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                  </VBox>
-                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="218.0" style="-fx-background-color: #E5ECF6; -fx-border-radius: 25; -fx-background-radius: 25;">
-                     <children>
-                        <Label style="-fx-font-size: 12; -fx-font-weight: bolder;" text="Hagtag" textFill="#1c1c1c">
-                           <VBox.margin>
-                              <Insets bottom="15.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <Label style="-fx-font-size: 24; -fx-font-weight: bolder;" text="7,265" textFill="#1c1c1c" />
-                              <Label style="-fx-font-size: 12;" text="+11.02%" textFill="#1c1c1c">
-                                 <HBox.margin>
-                                    <Insets left="54.0" top="5.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                     <HBox.margin>
-                        <Insets left="39.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="218.0" style="-fx-background-color: #F6FAFD; -fx-border-radius: 25; -fx-background-radius: 25;">
-                     <children>
-                        <Label style="-fx-font-size: 12; -fx-font-weight: bolder;" text="Hagtag" textFill="#1c1c1c">
-                           <VBox.margin>
-                              <Insets bottom="15.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <Label style="-fx-font-size: 24; -fx-font-weight: bolder;" text="7,265" textFill="#1c1c1c" />
-                              <Label style="-fx-font-size: 12;" text="+11.02%" textFill="#1c1c1c">
-                                 <HBox.margin>
-                                    <Insets left="54.0" top="5.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                     <HBox.margin>
-                        <Insets left="39.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="218.0" style="-fx-background-color: #E5ECF6; -fx-border-radius: 25; -fx-background-radius: 25;">
-                     <children>
-                        <Label style="-fx-font-size: 12; -fx-font-weight: bolder;" text="Hagtag" textFill="#1c1c1c">
-                           <VBox.margin>
-                              <Insets bottom="15.0" />
-                           </VBox.margin>
-                        </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <Label style="-fx-font-size: 24; -fx-font-weight: bolder;" text="7,265" textFill="#1c1c1c" />
-                              <Label style="-fx-font-size: 12;" text="+11.02%" textFill="#1c1c1c">
-                                 <HBox.margin>
-                                    <Insets left="54.0" top="5.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                     <HBox.margin>
-                        <Insets left="39.0" />
-                     </HBox.margin>
-                  </VBox>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
+               </bottom>
+            </BorderPane>
+         </center>
+      </BorderPane>
    </center>
 </BorderPane>

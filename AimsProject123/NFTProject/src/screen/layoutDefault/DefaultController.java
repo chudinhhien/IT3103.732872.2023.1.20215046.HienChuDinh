@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import screen.post.PostController;
+import screen.trending.TrendingController;
 
 public class DefaultController {
 
@@ -71,6 +72,8 @@ public class DefaultController {
     void clickTrend(MouseEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../trending/NFTTrend.fxml"));
         Node newContent = loader.load();
+        TrendingController controller = new TrendingController();
+        loader.setController(controller);
         rootPane.setCenter(newContent);
         changeCSSBtnActive(btnTrend);
         changeCSSBtnNoActive(btnPost);
@@ -79,7 +82,6 @@ public class DefaultController {
 
     @FXML
     void clickPost(MouseEvent event) throws IOException {
-    	System.out.println("OK");
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("../post/LayoutPost.fxml"));
         Node newContent = loader.load();
         PostController controller = new PostController();

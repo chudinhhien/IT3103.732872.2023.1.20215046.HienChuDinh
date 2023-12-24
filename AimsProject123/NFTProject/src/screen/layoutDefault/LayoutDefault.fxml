@@ -10,7 +10,7 @@
 
 <BorderPane fx:id="rootPane" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <VBox prefWidth="286.0" style="-fx-background-color: #EDF2F7;" BorderPane.alignment="CENTER">
+      <VBox prefWidth="286.0" style="-fx-background-color: #F7FAFC;" BorderPane.alignment="CENTER">
          <children>
             <Label text="Tên app">
                <VBox.margin>
@@ -86,7 +86,7 @@
          </children>
       </VBox>
    </left>
-   <center >
-      <fx:include source="../post/LayoutPost.fxml" stylesheets="@../post/style.css"/>
+   <center>
+      <fx:include source="../post/LayoutPost.fxml" stylesheets="@../post/style.css" />
    </center>
 </BorderPane>

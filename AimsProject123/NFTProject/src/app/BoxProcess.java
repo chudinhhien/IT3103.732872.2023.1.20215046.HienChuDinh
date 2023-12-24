@@ -29,7 +29,7 @@ import java.util.HashMap;
 
 
 
-public class App {
+public class BoxProcess {
 	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
        
