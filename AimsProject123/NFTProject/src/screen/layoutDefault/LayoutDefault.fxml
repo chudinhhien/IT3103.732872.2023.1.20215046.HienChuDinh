@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="rootPane" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefWidth="286.0" style="-fx-background-color: #EDF2F7;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Tên app">
+               <VBox.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="249.0" prefWidth="220.0">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="50.0" />
+               </VBox.margin>
+               <children>
+                  <Label lineSpacing="20.0" style="-fx-font-size: 20; -fx-font-weight: 700;" text="TỔNG QUAN" textFill="#718096">
+                     <VBox.margin>
+                        <Insets bottom="35.0" left="8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox fx:id="btnPost" onMouseClicked="#clickPost" prefHeight="47.0" prefWidth="220.0" style="-fx-background-radius: 100; -fx-background-color: #1DA1F2;">
+                     <children>
+                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: white; -fx-border-radius: 50%; -fx-background-radius: 50%;">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="64.0" style="-fx-font-weight: bolder; -fx-font-size: 18; -fx-line-spacing: 24; -fx-font: inter;" text="Bài viết" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets bottom="11.0" left="21.0" top="13.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="btnTrend" onMouseClicked="#clickTrend" prefHeight="47.0" prefWidth="220.0" style="-fx-background-radius: 100; -fx-background-color: #EDF2F7;">
+                     <children>
+                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: #1DA1F2; -fx-border-radius: 50%; -fx-background-radius: 50%;">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="64.0" style="-fx-font-weight: bolder; -fx-font-size: 18; -fx-line-spacing: 24; -fx-font: inter;" text="Nổi bật">
+                           <HBox.margin>
+                              <Insets bottom="11.0" left="21.0" top="13.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="btnCorrelation" onMouseClicked="#clickCorrelation" prefHeight="47.0" prefWidth="220.0" style="-fx-background-radius: 100; -fx-background-color: #EDF2F71F2;">
+                     <children>
+                        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: #1DA1F2; -fx-border-radius: 50%; -fx-background-radius: 50%;">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="136.0" style="-fx-font-weight: bolder; -fx-font-size: 18; -fx-line-spacing: 24; -fx-font: inter;" text="Sự tương quan">
+                           <HBox.margin>
+                              <Insets bottom="11.0" left="21.0" top="13.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center >
+      <fx:include source="../post/LayoutPost.fxml" stylesheets="@../post/style.css"/>
+   </center>
+</BorderPane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="1024.0" prefWidth="1154.0" style="-fx-background-color: #F6FAFD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screen.post.PostController">
+   <top>
+      <HBox prefHeight="97.0" prefWidth="1054.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox>
+               <children>
+                  <Label style="-fx-font-size: 42; -fx-font-weight: bolder;" text="Bài viết">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label text="Xem danh sách bài viết" textFill="#718096" />
+                  <Label text="theo hashtag/tag/keywword" textFill="#718096" />
+               </children>
+               <HBox.margin>
+                  <Insets left="16.0" />
+               </HBox.margin>
+            </VBox>
+            <TextField fx:id="inputSearch" onAction="#pressedSearch" prefHeight="41.0" prefWidth="782.0" style="-fx-background-radius: 25;">
+               <HBox.margin>
+                  <Insets left="20.0" top="30.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <BorderPane.margin>
+            <Insets left="34.0" top="44.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane fitToWidth="true" hbarPolicy="ALWAYS" style="-fx-fit-to-width: true; -fx-fit-to-height: false;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane>
+               <children>
+                  <HBox fx:id="contentSearch" layoutY="4.0" />
+               </children>
+            </AnchorPane>
+        </content>
+         <BorderPane.margin>
+            <Insets bottom="48.0" left="40.0" right="62.0" top="22.0" />
+         </BorderPane.margin>
+      </ScrollPane>
+   </center>
+</BorderPane>
