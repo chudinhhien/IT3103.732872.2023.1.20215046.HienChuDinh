@@ -2,7 +2,6 @@ package screen.layoutDefault;
 
 import java.io.IOException;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -71,7 +70,7 @@ public class DefaultController {
     
     @FXML
     void clickTrend(MouseEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../trending/NFTTrend.fxml"));
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource(".././view/NFTTrend.fxml"));
         Node newContent = loader.load();
         TrendingController controller = new TrendingController();
         loader.setController(controller);
@@ -83,12 +82,12 @@ public class DefaultController {
 
     @FXML
     void clickPost(MouseEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../post/LayoutPost.fxml"));
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource(".././view/LayoutPost.fxml"));
         Node newContent = loader.load();
         PostController controller = new PostController();
         loader.setController(controller);
         Scene scene = rootPane.getScene();
-        scene.getStylesheets().add(getClass().getResource("../post/style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource(".././post/style.css").toExternalForm());
         rootPane.setCenter(newContent);
         changeCSSBtnNoActive(btnTrend);
         changeCSSBtnActive(btnPost);
@@ -97,7 +96,7 @@ public class DefaultController {
 
     @FXML
     void clickCorrelation(MouseEvent event) throws IOException {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../correlation/Correlation.fxml"));
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource(".././view/Correlation.fxml"));
         Node newContent = loader.load();
         CorrelationController controller = new CorrelationController();
         loader.setController(controller);

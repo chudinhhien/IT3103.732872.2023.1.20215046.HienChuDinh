@@ -19,23 +19,23 @@ import model.Box;
 import model.NFT;
 import model.Tweets;
 
-public class DatabaseReader implements DataReader {
-    private static final String URL = "jdbc:postgresql://localhost:5432/oop";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "abcdxyz1234";
+public class BackupDatabaseReader implements DataReader {
+    private static final String URL = "jdbc:postgresql://localhost:5432/another_database";
+    private static final String USER = "another_username";
+    private static final String PASSWORD = "another_password";
 
     private static Connection connection = null;
 
     // Implement phương thức từ Interface
     @Override
-	public Connection getConnection() throws SQLException, ClassNotFoundException {
-		if(connection==null) {
-			Class.forName("org.postgresql.Driver");
-			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/NFT_Database", "postgres","admin");
-			System.out.print("Connected to Group 14's database");
-		}
-		return connection;
-	}
+    public Connection getConnection() throws SQLException, ClassNotFoundException {
+        if (connection == null) {
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.print("Connected to another database");
+        }
+        return connection;
+    }
 
     // Các phương thức đọc dữ liệu khác nếu cần
 }

@@ -24,7 +24,7 @@ public class Screen extends JFrame {
 			@Override
 			public void run() {
 				try {
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("./layoutDefault/LayoutDefault.fxml"));
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("view/LayoutDefault.fxml"));
 					DefaultController controller = new DefaultController();
 					loader.setController(controller);
 					Parent root = loader.load();

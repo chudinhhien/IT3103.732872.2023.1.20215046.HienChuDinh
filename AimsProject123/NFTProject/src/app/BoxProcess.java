@@ -2,6 +2,7 @@ package app;
 import java.util.ArrayList;
 
 
+
 import java.util.ArrayList;
 import java.sql.Timestamp;
 //import java.security.Timestamp;
@@ -84,21 +85,26 @@ public class BoxProcess {
 	 public static void searchNFTsByCollectionAndDateFunction(String collection, Date searchDate, List<Date> x,
 	            List<String> y) throws ClassNotFoundException, SQLException {
 	        Box box = new Box();
-	        populateNFTData_Opensea(DatabaseReader.getConnection(), box);
-	        populateNFTData_Binance(DatabaseReader.getConnection(), box);
+	        DatabaseReader databaseReader = new DatabaseReader();
+	        populateNFTData_Opensea(databaseReader.getConnection(), box);
+	        populateNFTData_Binance(databaseReader.getConnection(), box);
 	        box.searchNFTsByCollectionAndDate(collection, searchDate, x, y);
 	     
 	    }
 	
 	public static List<Articles> searchByAuthorFunction(String author) throws ClassNotFoundException, SQLException {
 	    Box box = new Box();
-	    populateTweets(DatabaseReader.getConnection(), box);
+        DatabaseReader databaseReader = new DatabaseReader();
+        
+	    populateTweets(databaseReader.getConnection(), box);
 	    return box.searchByAuthor(author);
 	}
 
 	public static List<BlogPosts> tagSearchingFunction(String tag) throws ClassNotFoundException, SQLException {
 	    Box box = new Box();
-	    populateBlogPosts(DatabaseReader.getConnection(), box);
+        DatabaseReader databaseReader = new DatabaseReader();
+
+	    populateBlogPosts(databaseReader.getConnection(), box);
 	    List<Articles> articleList = box.searchByTag(tag);
 	    List<BlogPosts> res = new ArrayList<>(); 
 	    for (Articles article : articleList) {
@@ -113,7 +119,8 @@ public class BoxProcess {
 	
 	public static List<Tweets> hashtagSearchingFunction(String tag) throws ClassNotFoundException, SQLException {
 	    Box box = new Box();
-	    populateTweets(DatabaseReader.getConnection(), box);
+        DatabaseReader databaseReader = new DatabaseReader();
+	    populateTweets(databaseReader.getConnection(), box);
 	    List<Articles> articleList = box.searchByHashTag(tag);
 	    List<Tweets> res = new ArrayList<>(); // Khởi tạo đối tượng res
 
@@ -131,7 +138,9 @@ public class BoxProcess {
 	public static String findHotHashTagInTweets(int day, int month, int year) throws ClassNotFoundException, SQLException {
 	    List<String> allTags = new ArrayList<>();
 	    Box box = new Box();
-	    populateTweets(DatabaseReader.getConnection(), box);
+        DatabaseReader databaseReader = new DatabaseReader();
+
+	    populateTweets(databaseReader.getConnection(), box);
 	    
 	    // Lặp qua danh sách tweets và thu thập tất cả các tag
 	    for (Articles article : box.getBox()) {
@@ -163,7 +172,8 @@ public class BoxProcess {
 	public static String findHotTagInBlog(int day, int month, int year) throws ClassNotFoundException, SQLException {
 	    List<String> allTags = new ArrayList<>();
 	    Box box = new Box();
-	    populateBlogPosts(DatabaseReader.getConnection(), box);
+        DatabaseReader databaseReader = new DatabaseReader();
+	    populateBlogPosts(databaseReader.getConnection(), box);
 	    // Lặp qua danh sách blogposts và thu thập tất cả các tag
 	    for (Articles article : box.getBox()) {
 	        if (article instanceof BlogPosts) {
