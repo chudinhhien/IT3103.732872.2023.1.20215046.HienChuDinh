@@ -87,6 +87,6 @@
       </VBox>
    </left>
    <center>
-      <fx:include source="../view/LayoutPost.fxml" stylesheets="@../post/style.css" />
+      <fx:include source="./LayoutPost.fxml" stylesheets="@.././css/post/style.css" />
    </center>
 </BorderPane>

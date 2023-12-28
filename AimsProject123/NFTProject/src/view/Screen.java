@@ -1,16 +1,16 @@
-package screen;
+package view;
 
 import java.io.IOException;
 
 import javax.swing.JFrame;
 
+import controller.DefaultController;
 //import hust.soict.dsai.aims.screen.CartScreenController;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import screen.layoutDefault.DefaultController;
 
 public class Screen extends JFrame {
 
@@ -24,7 +24,7 @@ public class Screen extends JFrame {
 			@Override
 			public void run() {
 				try {
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("view/LayoutDefault.fxml"));
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("./LayoutDefault.fxml"));
 					DefaultController controller = new DefaultController();
 					loader.setController(controller);
 					Parent root = loader.load();

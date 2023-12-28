@@ -1,4 +1,4 @@
-package screen.post;
+package controller;
 
 import java.awt.Desktop;
 import java.net.URI;

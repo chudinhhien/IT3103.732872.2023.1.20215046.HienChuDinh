@@ -1,4 +1,4 @@
-package screen.trending;
+package controller;
 
 import java.sql.SQLException;
 import java.time.LocalDate;

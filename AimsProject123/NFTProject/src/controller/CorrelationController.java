@@ -1,4 +1,4 @@
-package screen.correlation;
+package controller;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;

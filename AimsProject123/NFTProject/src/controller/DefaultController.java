@@ -1,4 +1,4 @@
-package screen.layoutDefault;
+package controller;
 
 import java.io.IOException;
 
@@ -10,9 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import screen.correlation.CorrelationController;
-import screen.post.PostController;
-import screen.trending.TrendingController;
 
 public class DefaultController {
 
@@ -87,7 +84,7 @@ public class DefaultController {
         PostController controller = new PostController();
         loader.setController(controller);
         Scene scene = rootPane.getScene();
-        scene.getStylesheets().add(getClass().getResource(".././post/style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource(".././css/post/style.css").toExternalForm());
         rootPane.setCenter(newContent);
         changeCSSBtnNoActive(btnTrend);
         changeCSSBtnActive(btnPost);
